@@ -32,8 +32,6 @@ RUN tar -xf /tmp/node-v14.18.3-linux-x64.tar.xz -C /usr/local/
 ENV PATH "${PATH}:/usr/local/node-v14.18.3-linux-x64/bin/"
 RUN npm install yarn -g
 
-COPY files/httpd.conf /etc/httpd/conf/httpd.conf
-
 CMD /usr/sbin/httpd -k start -DFOREGROUND
 
 
