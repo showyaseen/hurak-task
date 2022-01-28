@@ -43,7 +43,7 @@ export default {
       colors: ["red", "yellow", "green", "blue", "pink", "grey"],
       defaultWidth: 100,
       defaultHeight: 40,
-      everyMinute: 600,
+      everyMinute: 60000,
       showColors: true,
       taskOneDone: false,
     };
