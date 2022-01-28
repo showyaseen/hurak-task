@@ -1,0 +1,30 @@
+version: '3'
+services:
+  mysql-server-57:
+    build:
+      context: .
+      dockerfile: Dockerfile-MySQL-Server-57
+    volumes:
+      - "../mysql/:/var/lib/mysql"
+    networks:
+      hurak-net:
+        ipv4_address: 10.10.0.101
+
+  hurak:
+    build:
+      context: .
+      dockerfile: Dockerfile-PHP8
+    volumes:
+      - "../:/var/www/html/"
+    container_name: hurak
+    networks:
+      hurak-net:
+        ipv4_address: 10.10.0.102
+
+networks:
+  hurak-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.0.0/16
+  
